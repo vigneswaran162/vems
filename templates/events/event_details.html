@@ -1,0 +1,57 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+
+{% include 'layout/clg.html' %}
+
+
+
+
+<div class="container mt-3 mb-3 event_box details ">
+    <div class=" row">
+       {% for d in  details %}
+    <div class="col-md-12">
+       <img src="{{d.event_img.url}}"  class="img-fluid d-img">
+    </div>     
+    <div class="col-md-4 mt-5 mb-3">
+       <span class="h6 text-uppercase"><i class="fa-solid fa-location-dot me-1"></i> MAHENDRA INSTITUTE OF TECHNOLOGY</span>
+       
+      <h6 class="mt-4 "> <i class="fa fa-calendar me-1" aria-hidden="true"></i>   Last Date Registeration {{d.last_date}} </h6>
+
+     </div>
+     <div class="col-md-4  mt-5 mb-3">
+         <span class="h5 text-uppercase"><i class="fa-solid fa-building-columns me-1" ></i > {{d.auditorium}}</span><br>
+          
+          <a href=" {% url 'events' d.ename d.id %} " class="btn btn-danger mt-4 px-5">REGISTER</a>   
+     </div>
+     <div class="col-md-4 text-center  mt-5 mb-3">
+         <a href="{{d.invitation.url}}" download class="btn btn-primary text-uppercase px-5 mb-4">invitation</a> <br>
+         <span class="h5"> <t class="text-danger">TIME:</t> {{d.timing}}</span>
+     </div>
+     <div class="col-md-12  mb-3">
+         
+             <h3 class="mb-3 text-uppercase px-2 text-primary">{{d.event_name}}</h3>
+             <p class="px-2">
+              {{d.desc}}
+             </p>    
+          <h4 class="mb-3 px-2 text-danger">RULES & INSTRUCTION</h4> 
+          <ul class="px-5">
+             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda tenetur, odit quos consectetur amet cum commodi ipsam sint, consequatur quibusdam aliquid temporibus.</li>
+             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda tenetur, odit quos consectetur amet cum commodi ipsam sint, consequatur quibusdam aliquid temporibus.</li>
+             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda tenetur, odit quos consectetur amet cum commodi ipsam sint, consequatur quibusdam aliquid temporibus.</li>
+             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda tenetur, odit quos consectetur amet cum commodi ipsam sint, consequatur quibusdam aliquid temporibus.</li>
+             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda tenetur, odit quos consectetur amet cum commodi ipsam sint, consequatur quibusdam aliquid temporibus.</li>
+          </ul>   
+
+     </div> 
+       
+       {% endfor %}
+    
+        
+          
+    </div>    
+</div>   
+   {% include 'layout/footer.html' %}
+
+{% endblock main %}

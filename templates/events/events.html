@@ -1,0 +1,37 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+{% include 'layout/clg.html' %}
+
+{% include 'layout/navbar.html' %}
+
+
+
+<div class="container mt-3 mb-3 event_box ">
+    <div class="row">
+        
+      
+    {% for e in event %}
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{e.post_img.url}}" class="card-img-top eventimg" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{e.event_name}}</h5>
+          <span class="badge bg-secondary me-5">{{e.event_type}}</span> <span class="text-danger">{{e.event_date}}</span>
+          <p class="card-text small mt-2 text-muted">{{e.small_desc}}</p>
+          <a href=" {% url 'events' e.ename %}  " class="btn btn-dark w-100">REGISTER</a>
+        </div>
+      </div>
+    </div> 
+    
+    {% endfor %} 
+
+
+
+    </div>    
+</div>   
+   {% include 'layout/footer.html' %}
+
+{% endblock main %}

@@ -1,0 +1,64 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+  {% include 'layout/dnavbar.html' %}
+
+<div class="container">
+    <div class="row d-flex align-items-center justify-content-center ">
+      
+   
+   
+    <div class="col-md-6 px-5">
+      {% include 'login/message.html' %}
+      <img src="{% static 'images/upload1.png' %}" class="img-fluid">
+
+    </div>  
+
+  
+    <div class="col-md-6 px-5 pt-4">
+      <h4 class="mb-2"> UPLOAD EVENT FILE </h4>
+      <form action="" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">YEAR:</label>
+           
+                <select class="form-select form-select-sm" name="year" id="">
+                   
+                     {% for y in  years %}
+                     <option value="{{y.id}}">{{y.year}}</option>
+                     {% endfor %}
+                  
+                </select>
+        
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">EVENT NAME:</label>
+            <input type="text" autocomplete="off" name="ename" class="form-control" id="exampleFormControlInput1" required >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">EVENT DATE:</label>
+            <input type="date" autocomplete="off" name="date" class="form-control" id="exampleFormControlInput1" required >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION:</label>
+            <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="2" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">EVENT FILE:</label>
+            <input type="file" accept="" autocomplete="off" name="file" class="form-control" id="exampleFormControlInput1" required >
+          </div>
+          <input type="submit" class="btn btn-dark w-100 mb-2" value="UPLOAD">
+    </form>    
+
+      
+    </div>
+      
+    </div>
+  </div>
+
+
+{% endblock main %}
+
+
+

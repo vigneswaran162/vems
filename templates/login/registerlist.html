@@ -1,0 +1,63 @@
+{% extends 'layout/layout.html' %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+  
+{% include 'layout/dnavbar.html' %}
+<div class="container-fluid mt-5 dashboard">
+    <div class="row ">
+      
+      <div class="col-md-12 px-5 ">
+
+       
+        <table class="table table-responsive table-bordered display" id="example" >
+            <thead class="text-uppercase">
+                <tr>
+                    <th>fullname</th>
+                    <th>email</th>
+                    <th>phoneno</th>
+                    <th>rollno</th>
+                    <th>collegename</th>
+                    <th>dept</th>
+                    <th>event name</th>
+                </tr>
+            </thead>
+            <tbody>
+               {% for d in event  %}
+               <tr>
+                <td>{{d.fullname}}</td>
+                <td>{{d.email}}</td>
+                <td>{{d.phoneno}}</td>
+                <td>{{d.rollno}}</td>
+                <td>{{d.collegename}}</td>
+                <td>{{d.dept}}</td>
+                <td>{{d.eventname}}</td>
+                </tr>
+                          
+               {% endfor %}
+            </tbody>
+        </table>
+
+
+      </div>  
+      <div class="col-md-3 mx-4 mt-2">
+        <button class="btn btn-success px-5">DOWNLOAD</button>
+      </div>   
+    </div>
+  </div>
+
+<script>
+
+  $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+
+</script>   
+{% endblock main %}
+
+
+

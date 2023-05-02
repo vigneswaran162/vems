@@ -1,0 +1,69 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+
+
+<div class="container event-box mt-5">
+  <form class="row g-3 mt-5" method="POST">
+    
+    {% csrf_token %}
+
+   
+   
+    
+   <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Select Your Event</label>
+    <select class="form-select form-select-md mb-3" name="edetails" aria-label=".form-select-lg example">
+      {% for e in events %}
+      <option value="{{e.event_name}}">{{e.event_name}}</option>
+      {% endfor %}
+    </select>
+   </div>    
+   <div class="col-md-6">
+   
+   </div>    
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Full Name</label>
+      <input type="text" name="fullname"  class="form-control" id="inputEmail4" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" id="inputPassword4" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Phone No</label>
+      <input type="number" name="phone" class="form-control" id="inputEmail4" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Roll No</label>
+      <input type="text" name="rollno" class="form-control" id="inputPassword4" required>
+    </div>
+    <div class="col-md-6">
+     
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input type="text" class="form-control" name="clgname"  id="inputPassword4" required>
+      
+    </div>
+    <div class="col-md-6">
+      <label for="exampleFormControlInput1" class="form-label">DEPT</label>
+      <select class="form-select" name="dept" aria-label="Default select example" required>
+          <option selected>select your dept</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="IT">IT</option>
+          <option value="MECH">MECH</option>
+          <option value="CVIL">CVIL</option>
+          <option value="BIO-MEDICAL">BIO MEDICAL</option>
+        </select>                  
+    </div>
+
+    
+   
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary  px-5">REGISTER</button>
+    </div>
+  </form>  
+</div>   
+   
+{% endblock main %}

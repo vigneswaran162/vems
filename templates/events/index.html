@@ -1,0 +1,80 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+
+{% include 'layout/clg.html' %}
+{% include 'layout/navbar.html' %}
+
+<div class="container-fluid event mb-3">
+    <div class="row">
+      <div class="col-md-6 p-2">
+        <img src="{% static 'images/cs.jpg'   %}" class="img-fluid">
+      </div>
+      <div class="col-md-6 py-5">
+       <span class="h2 text-uppercase heading">department of</span><br>
+       <span class="h5  text-uppercase">computer science engineering</span>
+
+       <p class="mb-3 mt-3 dec px-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minus eveniet consequuntur maiores autem commodi voluptas beatae, vitae perspiciatis. Commodi doloremque amet earum illo fugiat placeat ipsa consequatur delectus aut.
+        <br> <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minus eveniet consequuntur maiores autem commodi voluptas beatae, vitae perspiciatis. Commodi doloremque amet earum illo fugiat placeat ipsa consequatur delectus aut.
+       </p> 
+      </div>   
+
+    </div>
+</div>
+<div class="container img-car mb-3 px-5">
+  <div class="row">
+    <h3 class="mb-2 mt-4 PX-5">EVENTS <span>POSTER</span></h3>
+    <div class="col-md-12 px-5 mb-3 mt-3">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/mu.jpg' %}" class="img-fluid  h-80" height="700" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/dance.jpg' %}" class="img-fluid h-80" height="700" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/da.jpg' %}" class="d-block w-100" alt="img-fluid h-80">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+   
+  </div>
+</div>
+<div class="container mb-3">
+
+    <div class="row">
+        
+        <h3 class="mb-4">LATEST <span>EVENTS</span></h3>
+     
+        {% for e in event  %}
+        <div class="col-md-4">
+            <div class="card">
+              <img src="{{e.post_img.url}}" class="card-img-top eventimg" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{e.event_name}}</h5>
+                <span class="badge bg-secondary me-5">{{e.event_type}}</span> <span class="text-danger">{{e.event_date}}</span>
+                <p class="card-text small mt-2 text-muted">{{e.small_desc}}</p>
+                <a href=" {% url 'events' e.ename %}  " class="btn btn-dark w-100">REGISTER</a>
+              </div>
+            </div>
+          </div> 
+        {% endfor %}
+
+      </div>
+  </div>
+  {% include 'layout/footer.html' %}   
+
+{% endblock main %}

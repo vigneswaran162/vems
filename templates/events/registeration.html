@@ -1,0 +1,67 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+
+
+<div class="container event-box">
+    <div class="row">
+        <div class="col-md-6 p-5">
+           
+            <form method="post">
+                {% csrf_token %}
+                <select class="form-select" name="edet" id="">
+                   
+                    {% for e in  eventdetail %}
+                    <option value="{{e.id}}">{{e.name}}</option>
+                    {% endfor %}
+                 
+               </select>
+
+             
+                
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">FULL NAME</label>
+                    <input type="text" name="fullname" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">EMAIL</label>
+                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">PHONE NO</label>
+                    <input type="number" name="phone" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">ROLL NO</label>
+                    <input type="number" name="rollno" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">COLLEGE NAME</label>
+                    <input type="text" name="collegename" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">DEPT</label>
+                    <select class="form-select" name="dept" aria-label="Default select example">
+                        <option selected>select your dept</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="IT">IT</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CVIL">CVIL</option>
+                        <option value="BIO-MEDICAL">BIO MEDICAL</option>
+                      </select>                  
+                    </div>
+                
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                <input type="submit" class="btn w-100 btn-dark" value="SUBMIT">
+            </form>    
+        </div> 
+    </div>   
+</div>   
+   
+{% endblock main %}

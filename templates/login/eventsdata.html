@@ -1,0 +1,32 @@
+{% extends 'layout/layout.html' %}
+{% block title %}MIT {% endblock title %}
+{% block main %}
+  {% include 'layout/dnavbar.html' %}
+
+<div class="container mt-5">
+    <div class="row d-flex align-items-center justify-content-center ">
+      
+   
+   
+   {% for d in data %}
+   <div class="col-md-3 card text-center p-2 m-3 year">
+     <a href="  {% url 'eventsdata' d.id %} ">
+        <h5 class="text-danger">{{d.year}}</h5>
+        <p class="text-uppercase text-dark">{{d.desc}}</p>
+        
+     </a>   
+   </div>    
+   {% endfor %}
+     
+
+      
+    
+      
+    </div>
+  </div>
+
+
+{% endblock main %}
+
+
+

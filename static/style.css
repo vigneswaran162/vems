@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap');
+*{
+    text-decoration: none !important;
+    font-family: 'Poppins', sans-serif;
+   
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+.btn:focus{
+    box-shadow: none !important;
+}
+.btn{
+    border: none !important;
+}
+
+
+   footer{
+    width: 100%;
+    height: auto;
+    background-color: #2D334A;
+    color: #FFFF;
+}
+footer span{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+footer a{
+   font-size: 14px;
+   font-weight: 600;
+    margin: 0;
+    color: #95D1CC !important;
+   
+}
+footer span{
+    color: gray;
+    cursor: pointer;
+}
+footer .clg{
+    padding: 10px;
+
+}
+footer address{
+    padding: 10px;
+}
+footer h3{
+     line-height: 2px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 6px;
+    letter-spacing: 3px;
+}
+footer i{
+    color: #95D1CC;
+    padding: 10px;
+}
+footer ul li{
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+footer li .link{
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: gray  !important;
+    
+    
+}
+footer  .link:hover{
+    color: #ffff !important;
+  
+    
+}
+footer h4{
+    letter-spacing: 1px;
+    border-bottom: 4px solid #95D1CC;
+    width: 160px;
+    padding-bottom: 4px;
+}
+footer .social-link{
+    padding-top:10px ;
+}
+footer .social-link i{
+      padding: 10px;
+      font-size: 20px;
+      margin: 5px;
+      border: 1px solid gray !important;
+      color:grey !important;
+      border-radius: 50px;
+      cursor: pointer;
+}
+
+footer .social-link i:hover{
+    background-color: #ffff !important;
+    color: #006E7F !important;
+    border: none !important;
+}
+
+.event_box .small{
+    font-size: 12px !important;
+    text-align: justify;
+}
+.eventimg{
+    width: 100%;
+    height: 250px !important;
+}
+.etitle{
+    color: #ff6b6b;
+}
+.edate{
+    color: #222f3e;
+}
+.btn-dark{
+    background-color: #192a56 !important;
+    color: #ffff;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.edate i{
+    color: #ff6b6b
+}
+.d-img{
+    width: 100% !important;
+    height: 75vh !important;
+    border-radius: 10px !important;
+}
+.details span{
+    color: #192a56 !important;
+}
+.details i{
+    color: #fd6565 !important;
+}
+.btn{
+    letter-spacing: 2px !important;
+}
+.dashboard a{
+    color: #ffff !important;
+}
+.content p{
+    text-align: justify !important;
+}
+
+h3{
+    color: #192a56 !important;
+    letter-spacing: 2px;
+}
+h3 span{
+    color: #fd6565 !important;
+}
+
+.event .heading{
+  letter-spacing: 3px !important;
+  color: #fd6565 !important;
+}
+.event .dec{
+    text-align: justify !important;
+}
+.clg-title{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.clg-title .clgname{
+    font-weight: 520 !important;
+    letter-spacing: 2px !important;
+}
+.clg-title .clgd{
+    font-size: 12px !important;
+    color: #192a56 !important;
+}
+.clg-title .clga{
+    color: #fd6565 !important;
+}
+
+
+.input-group input:focus{
+    box-shadow:  none !important;
+    border: none !important;
+}
+.input-group .input-group-text{
+    background-color: none !important;
+}
+.img-car img{
+    width: 100% !important;
+    height: 80vh !important;
+}
